@@ -1,0 +1,6 @@
+name: PagMineCash
+version: 1.0.0
+author: GCunha
+main: com.gcunha.pagminecash.PagMineCash
+commands:
+  cash:
