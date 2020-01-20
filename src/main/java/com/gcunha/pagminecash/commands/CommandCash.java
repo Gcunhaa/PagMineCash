@@ -22,7 +22,6 @@ public class CommandCash implements CommandExecutor {
         this.subCommands = new ArrayList<>();
 
         setupCommand();
-
     }
 
     private void addSubCommand(SubCommand subCommand){
@@ -50,7 +49,6 @@ public class CommandCash implements CommandExecutor {
                     return false;
                 }
 
-                commandSender.sendMessage("AAAAAAAAAAAAAAAAAAAAAa");
             }
 
             String subCommandTitle = args[0];

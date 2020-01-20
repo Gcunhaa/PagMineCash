@@ -20,9 +20,13 @@ public class Bank {
         return cash;
     }
 
+    public void setCash(Float quantity){
+        this.cash = quantity;
+    }
+
     public void addCash(Float quantity){
         //Funcao que adiciona cash ao jogador
-        this.cash = this.cash + quantity;
+        setCash(this.cash + quantity);
     }
 
     public void removeCash(Float quantity){
@@ -35,7 +39,7 @@ public class Bank {
             quantity = quantity - delta;
         }
 
-        this.cash = cash - quantity;
+        setCash(this.cash - quantity);
     }
 
 

@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="PagMineCash:jar">
+    <output-path>$PROJECT_DIR$/../../spigot-server/plugins</output-path>
+    <root id="archive" name="PagMineCash.jar">
+      <element id="module-output" name="PagMineCash" />
+      <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
+    </root>
+  </artifact>
+</component>
