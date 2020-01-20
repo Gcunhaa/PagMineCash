@@ -3,7 +3,9 @@
     <output-path>$PROJECT_DIR$/../../spigot-server/plugins</output-path>
     <root id="archive" name="PagMineCash.jar">
       <element id="module-output" name="PagMineCash" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../HikariCP-3.4.2.jar" path-in-jar="/" />
       <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/slf4j-api-1.7.25.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

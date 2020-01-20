@@ -1,6 +1,8 @@
 package com.gcunha.pagminecash.bank;
 
+import com.gcunha.pagminecash.PagMineCash;
 import com.gcunha.pagminecash.cache.CacheOfflineCash;
+import com.gcunha.pagminecash.data.CashData;
 import org.bukkit.Bukkit;
 
 import java.util.HashMap;
@@ -8,13 +10,16 @@ import java.util.UUID;
 
 public class BankManager {
 
-    private HashMap<UUID, Bank> cacheOnline;
-    private CacheOfflineCash cacheOffline;
-
+    private final HashMap<UUID, Bank> cacheOnline;
+    private final CacheOfflineCash cacheOffline;
+    private final PagMineCash plugin;
+    private final CashData dataManager;
 
     public BankManager() {
         this.cacheOnline = new HashMap<>();
         this.cacheOffline = new CacheOfflineCash();
+        this.plugin = PagMineCash.getInstance();
+        this.dataManager = plugin.getDataManager();
     }
 
 
@@ -40,7 +45,7 @@ public class BankManager {
 
         }
 
-        //VERIFICAR BANCO DE DADOS E RETORNAR NULO SE NAO TIVER
+        //TODO:VERIFICAR BANCO DE DADOS E RETORNAR NULO SE NAO TIVER
         return bank;
     }
 
@@ -52,12 +57,19 @@ public class BankManager {
     public Bank createBank(UUID uuid){
         //Funcao que cria o banco
 
-        Bank bank = new Bank(uuid, (float) 0);
-        if(Bukkit.getOnlinePlayers().contains(uuid)) this.cacheOnline.put(uuid, new Bank(uuid,(float)0) );
+        try{
+            System.out.print(dataManager.getBank(uuid).toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        //if(dataManager.getBank(uuid) == null){
+            //TODO:CRIA NO BANCO DE DADOS
 
 
-        //BANCO DE DADOS
-        return bank;
+        if(Bukkit.getOnlinePlayers().contains(uuid)) this.cacheOnline.put(uuid, null);
+
+
+        return null;
     }
 
 }

@@ -79,6 +79,11 @@ public class CommandCash implements CommandExecutor {
                 }
             }
 
+            if(args.length > 1){
+                showHelp(commandSender);
+                return false;
+            }
+
             OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(subCommandTitle);
             if(!offlinePlayer.hasPlayedBefore()){
                 commandSender.sendMessage("§cNao foi possivel encontrar esse jogador.");
