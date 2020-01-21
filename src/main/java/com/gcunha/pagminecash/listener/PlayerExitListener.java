@@ -5,31 +5,22 @@ import com.gcunha.pagminecash.bank.BankManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.event.player.PlayerQuitEvent;
 
-public class PlayerJoinListener implements Listener {
+public class PlayerExitListener implements Listener {
 
     private final PagMineCash plugin;
     private final BankManager bankManager;
 
-    public PlayerJoinListener() {
+    public PlayerExitListener() {
         this.plugin = PagMineCash.getInstance();
         this.bankManager = plugin.getBankManager();
-
     }
 
     @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent event) {
+    public void playerExitEvent(PlayerQuitEvent event){
         Player player = event.getPlayer();
 
-        new BukkitRunnable() {
-            @Override
-            public void run() {
-                bankManager.createBank(player.getUniqueId());
-            }
-        }.runTaskAsynchronously(plugin);
-
+        bankManager.deleteBankOnlineCache(player.getUniqueId());
     }
-
 }

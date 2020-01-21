@@ -42,8 +42,7 @@ public class QuerryCashBankRunnable extends BukkitRunnable {
             connection = dataSource.getConnection();
             preparedStatement = connection.prepareStatement(query);
 
-            preparedStatement.setString(1,uuid.toString());
-            System.out.print("EEEEEEEE");
+            preparedStatement.setString(1,uuid.toString());;
             resultSet = preparedStatement.executeQuery();
             //callback.call(resultSet);
             if(resultSet != null && resultSet.next()){

@@ -4,6 +4,7 @@ import com.gcunha.pagminecash.bank.BankManager;
 import com.gcunha.pagminecash.commands.CommandCash;
 import com.gcunha.pagminecash.data.CashData;
 import com.gcunha.pagminecash.data.CashDataMySql;
+import com.gcunha.pagminecash.listener.PlayerExitListener;
 import com.gcunha.pagminecash.listener.PlayerJoinListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -19,18 +20,17 @@ public class PagMineCash extends JavaPlugin {
     @Override
     public void onEnable() {
         this.instance = this;
-        this.bankManager = new BankManager();
-        this.commandCash = new CommandCash();
 
         setupData();
-        setupListeners();
 
-        getDataManager().getBank(UUID.fromString("fcb6d822-c7e2-4bfc-9e9b-14069260ab0d"));
+        this.bankManager = new BankManager();
+
+        this.commandCash = new CommandCash();
+        setupListeners();
     }
 
     @Override
     public void onDisable() {
-
         getDataManager().closePool();
     }
 
@@ -53,5 +53,6 @@ public class PagMineCash extends JavaPlugin {
 
     private void setupListeners(){
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(),this);
+        getServer().getPluginManager().registerEvents(new PlayerExitListener(), this);
     }
 }

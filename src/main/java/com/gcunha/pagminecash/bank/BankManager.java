@@ -47,8 +47,12 @@ public class BankManager {
 
         }
 
-        //VERIFICA BANCO DE DADOS E RETORNAR NULO SE NAO TIVER
-        bank = dataManager.getBank(uuid);
+
+        if(bank == null){
+            //VERIFICA BANCO DE DADOS E RETORNAR NULO SE NAO TIVER
+            bank = dataManager.getBank(uuid);
+        }
+
 
         //Se jogador estiver offline adiciona no cacheOffline
         if(Bukkit.getPlayer(uuid) == null && bank != null ) cacheOffline.add(bank);

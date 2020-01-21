@@ -12,6 +12,11 @@ public class Bank {
         this.cash = cash;
     }
 
+    public Bank(UUID ownerUuid) {
+        this.ownerUuid = ownerUuid;
+        this.cash = (float) 0.0;
+    }
+
     public UUID getOwnerUuid() {
         return ownerUuid;
     }

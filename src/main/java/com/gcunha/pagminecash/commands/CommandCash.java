@@ -2,6 +2,8 @@ package com.gcunha.pagminecash.commands;
 
 import com.gcunha.pagminecash.PagMineCash;
 import com.gcunha.pagminecash.bank.Bank;
+import com.gcunha.pagminecash.bank.BankManager;
+import com.gcunha.pagminecash.data.CashData;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
@@ -9,17 +11,21 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
 
 public class CommandCash implements CommandExecutor {
 
-    private ArrayList<SubCommand> subCommands;
-    private PagMineCash plugin;
+    private final ArrayList<SubCommand> subCommands;
+    private final PagMineCash plugin;
+    private final BankManager bankManager;
 
     public CommandCash() {
         this.plugin = PagMineCash.getInstance();
         this.subCommands = new ArrayList<>();
+        this.bankManager = plugin.getBankManager();
 
         setupCommand();
     }
@@ -48,6 +54,20 @@ public class CommandCash implements CommandExecutor {
                     showHelp(commandSender);
                     return false;
                 }
+
+                new BukkitRunnable() {
+                    @Override
+                    public void run() {
+                        Player player = (Player) commandSender;
+                        Bank bank = bankManager.getBank(player.getUniqueId());
+                        if(bank != null){
+                            commandSender.sendMessage("§aO seu saldo: " + bank.getCash());
+
+                        }
+                    }
+                }.runTaskAsynchronously(plugin);
+
+                return true;
 
             }
 
@@ -87,11 +107,23 @@ public class CommandCash implements CommandExecutor {
             OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(subCommandTitle);
             if(!offlinePlayer.hasPlayedBefore()){
                 commandSender.sendMessage("§cNao foi possivel encontrar esse jogador.");
-                return true;
+            }else{
+
+                new BukkitRunnable() {
+                    @Override
+                    public void run() {
+
+                        Bank bank = bankManager.getBank(offlinePlayer.getUniqueId());
+                        if(bank != null){
+                            commandSender.sendMessage("§aSaldo do jogador: " + bank.getCash());
+                        }
+                    }
+                }.runTaskAsynchronously(plugin);
+
             }
 
-            Bank bank = plugin.getBankManager().getBank(offlinePlayer.getUniqueId());
-            commandSender.sendMessage("§aSaldo do jogador: " + bank.getCash());
+            return true;
+
         }
 
         return true;

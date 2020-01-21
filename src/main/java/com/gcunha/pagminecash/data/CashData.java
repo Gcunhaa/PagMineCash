@@ -12,7 +12,7 @@ public interface CashData {
     //Retorna o bank do banco de dados
     Bank getBank(UUID uuid);
 
-    Bank createBank(UUID uuid);
+    void createBank(UUID uuid);
 
     void updateCash(Bank bank);
 

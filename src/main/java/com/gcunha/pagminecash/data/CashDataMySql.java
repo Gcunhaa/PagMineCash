@@ -39,27 +39,53 @@ public class CashDataMySql implements CashData {
 
     @Override
     public Bank getBank(UUID uuid) {
-        final Bank[] bank = new Bank[1];
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        Bank result = null;
 
-        BukkitTask task = new QuerryCashBankRunnable(getDataSource(), uuid, new Callback<ResultSet>() {
-            @Override
-            public void call(ResultSet result) {
-               { try {
-                    if(result != null && result.next()){
-                        bank[0] = new Bank(uuid,result.getFloat("Cash"));
-                        System.out.print(bank[0].getCash().toString());
-                    }
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+        try {
+            String query = "SELECT * FROM `pagminecash` WHERE Uuid = ?";
+
+            connection = dataSource.getConnection();
+            preparedStatement = connection.prepareStatement(query);
+
+            preparedStatement.setString(1,uuid.toString());
+            resultSet = preparedStatement.executeQuery();
+
+            if(resultSet != null && resultSet.next()){
+                result = new Bank(uuid,resultSet.getFloat("Cash"));
             }
-        }}).runTaskAsynchronously(plugin);
-        return bank[0];
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            close(connection,preparedStatement,resultSet);
+        }
+
+        return result;
     }
 
     @Override
-    public Bank createBank(UUID uuid) {
-        return null;
+    public void createBank(UUID uuid) {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+
+        try {
+            String query = "INSERT INTO `pagminecash` (Uuid) VALUES (?)";
+
+            connection = dataSource.getConnection();
+            preparedStatement = connection.prepareStatement(query);
+
+            preparedStatement.setString(1,uuid.toString());
+            preparedStatement.execute();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            close(connection,preparedStatement,null);
+        }
+
     }
 
     @Override

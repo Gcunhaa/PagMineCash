@@ -4,28 +4,35 @@ import com.gcunha.pagminecash.PagMineCash;
 import com.gcunha.pagminecash.bank.Bank;
 import org.bukkit.scheduler.BukkitRunnable;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class CacheOfflineCash extends BukkitRunnable {
 
     //tempo para exclusao do objeto do cache em minutos
-    private long timeStored = 15 * 6000;
-    private HashMap<UUID,CacheOfflineCashObject> cacheOfflineCash ;
+    private long timeStored = 10 * 60000;
+    private ConcurrentHashMap<UUID,CacheOfflineCashObject> cacheOfflineCash ;
     private PagMineCash plugin;
 
     public CacheOfflineCash() {
-        this.cacheOfflineCash = new HashMap<>();
+        this.cacheOfflineCash = new ConcurrentHashMap<>();
         this.plugin = PagMineCash.getInstance();
-        runTaskTimerAsynchronously(plugin,1,60000);
+        runTaskTimerAsynchronously(plugin,1,1200 );
     }
 
     @Override
     public void run() {
-        for(CacheOfflineCashObject cashObject : cacheOfflineCash.values()){
+
+        for(CacheOfflineCashObject cacheObject : cacheOfflineCash.values()){
             //Verifica se o objeto deve ser removido da cache
-            if(cashObject.getDeleteTime() == System.currentTimeMillis()) this.cacheOfflineCash.remove(cashObject);
+            if(cacheObject.getDeleteTime() <= System.currentTimeMillis()){
+                remove(cacheObject.getBank().getOwnerUuid());
+            }
         }
+
     }
 
     public Bank get(UUID uuid){
@@ -47,7 +54,9 @@ public class CacheOfflineCash extends BukkitRunnable {
     public void remove(UUID uuid){
         //Funcao que remove o banco do cache
 
-        this.cacheOfflineCash.remove(uuid);
+        synchronized (cacheOfflineCash){
+            this.cacheOfflineCash.remove(uuid);
+        };
     }
 
     public Boolean contains(UUID uuid){
