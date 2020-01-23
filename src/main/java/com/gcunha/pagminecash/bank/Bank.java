@@ -1,5 +1,8 @@
 package com.gcunha.pagminecash.bank;
 
+import com.gcunha.pagminecash.PagMineCash;
+import org.bukkit.scheduler.BukkitRunnable;
+
 import java.util.UUID;
 
 public class Bank {
@@ -26,12 +29,20 @@ public class Bank {
     }
 
     public void setCash(Float quantity){
-        //TODO: ADICIONAR UPDATE NO BANCO DE DADOS
+        //Funcao que atualizar o valor de cash no banco de dados
         if(quantity < 0) {
             quantity = (float) 0;
         }
 
         this.cash = quantity;
+        Bank bank = this;
+
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+                PagMineCash.getInstance().getDataManager().updateCash(bank);
+            }
+        }.runTaskAsynchronously(PagMineCash.getInstance());
     }
 
     public void addCash(Float quantity){

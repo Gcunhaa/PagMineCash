@@ -102,6 +102,33 @@ public class CashDataMySql implements CashData {
     }
 
     @Override
+    public void updateCash(Bank bank) {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        ArrayList<Bank> result = new ArrayList<>();
+
+        try {
+            //TODO: TORNAR O LIMITE CONFIGURAVEL
+            String query = "UPDATE `pagminecash` SET Cash=? WHERE Uuid=?";
+
+            connection = dataSource.getConnection();
+            preparedStatement = connection.prepareStatement(query);
+
+            preparedStatement.setFloat(1,bank.getCash());
+            preparedStatement.setString(2,bank.getOwnerUuid().toString());
+
+            preparedStatement.execute();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            close(connection,preparedStatement,null);
+        }
+
+    }
+
+    @Override
     public void createBank(UUID uuid) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -121,11 +148,6 @@ public class CashDataMySql implements CashData {
         } finally {
             close(connection,preparedStatement,null);
         }
-
-    }
-
-    @Override
-    public void updateCash(Bank bank) {
 
     }
 
