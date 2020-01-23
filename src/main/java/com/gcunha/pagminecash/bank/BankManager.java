@@ -3,6 +3,7 @@ package com.gcunha.pagminecash.bank;
 import com.gcunha.pagminecash.PagMineCash;
 import com.gcunha.pagminecash.cache.CacheOfflineCash;
 import com.gcunha.pagminecash.data.CashData;
+import com.gcunha.pagminecash.data.runnables.TopUpdateBukkitRunnable;
 import org.bukkit.Bukkit;
 import org.bukkit.craftbukkit.libs.jline.internal.Nullable;
 import org.bukkit.entity.Player;

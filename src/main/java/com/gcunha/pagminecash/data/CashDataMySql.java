@@ -16,6 +16,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.SortedMap;
 import java.util.UUID;
 
 public class CashDataMySql implements CashData {
@@ -56,6 +59,39 @@ public class CashDataMySql implements CashData {
             if(resultSet != null && resultSet.next()){
                 result = new Bank(uuid,resultSet.getFloat("Cash"));
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            close(connection,preparedStatement,resultSet);
+        }
+
+        return result;
+    }
+
+
+    //TODO: FAZER TOPBANK
+    @Override
+    public ArrayList<Bank> getTopBanks() {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        ArrayList<Bank> result = new ArrayList<>();
+
+        try {
+            //TODO: TORNAR O LIMITE CONFIGURAVEL
+            String query = "SELECT * FROM `pagminecash` ORDER BY Cash DESC LIMIT 10";
+
+            connection = dataSource.getConnection();
+            preparedStatement = connection.prepareStatement(query);
+
+            
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+                Bank bank = new Bank(UUID.fromString(resultSet.getString("Uuid")),resultSet.getFloat("Cash"));
+                result.add(bank);
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

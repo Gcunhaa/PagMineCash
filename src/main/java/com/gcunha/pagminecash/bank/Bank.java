@@ -26,6 +26,11 @@ public class Bank {
     }
 
     public void setCash(Float quantity){
+        //TODO: ADICIONAR UPDATE NO BANCO DE DADOS
+        if(quantity < 0) {
+            quantity = (float) 0;
+        }
+
         this.cash = quantity;
     }
 
@@ -38,11 +43,6 @@ public class Bank {
         //Funcao que remove cash do jogador
 
         Float cash = this.cash;
-
-        if(quantity > cash) {
-            Float delta = quantity - cash;
-            quantity = quantity - delta;
-        }
 
         setCash(this.cash - quantity);
     }
