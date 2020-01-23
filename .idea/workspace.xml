@@ -7,24 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72826a8f-64a8-42a6-bfc9-d864c025a234" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/AddSubCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/RemoveSubCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/SetSubCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/TopSubCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/data/runnables/TopUpdateBukkitRunnable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/SendSubCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/bank/Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/bank/Bank.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/bank/BankManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/bank/BankManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/commands/CommandCash$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/commands/CommandCash$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/commands/CommandCash$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/commands/CommandCash$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/commands/CommandCash.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/commands/CommandCash.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/data/CashData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/data/CashData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/data/CashDataMySql.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/data/CashDataMySql.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/bank/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/bank/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/bank/BankManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/bank/BankManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/CommandCash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/CommandCash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/data/CashData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/data/CashData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/data/CashDataMySql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/data/CashDataMySql.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,23 +85,31 @@
       <option name="project" value="LOCAL" />
       <updated>1579637486299</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Comandos adicionar,remover,setar e top adicionados">
+      <created>1579801910232</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1579801910232</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Banco de dados sincronizado com o plugin" />
     <MESSAGE value="Sistema SQL funcionando perfeitamente" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sistema SQL funcionando perfeitamente" />
+    <MESSAGE value="Comandos adicionar,remover,setar e top adicionados" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comandos adicionar,remover,setar e top adicionados" />
   </component>
   <component name="WindowStateProjectService">
     <state x="491" y="82" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" timestamp="1579797678823">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="491" y="82" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1579797678823" />
-    <state x="278" y="0" width="800" height="723" key="CommitChangelistDialog2" timestamp="1579637485257">
+    <state x="278" y="0" width="800" height="723" key="CommitChangelistDialog2" timestamp="1579801909987">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="278" y="0" width="800" height="723" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1579637485257" />
+    <state x="278" y="0" width="800" height="723" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1579801909987" />
     <state x="461" y="119" width="424" height="479" key="FileChooserDialogImpl" timestamp="1579547184714">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -122,10 +118,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="166" y="0" width="1024" height="723" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1579547186985" />
-    <state x="278" y="99" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1579639501167">
+    <state x="278" y="99" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1579801924399">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="278" y="99" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1579639501167" />
+    <state x="278" y="99" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1579801924399" />
     <state x="366" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1579796011266">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -3,10 +3,7 @@ package com.gcunha.pagminecash.commands;
 import com.gcunha.pagminecash.PagMineCash;
 import com.gcunha.pagminecash.bank.Bank;
 import com.gcunha.pagminecash.bank.BankManager;
-import com.gcunha.pagminecash.commands.subcommands.AddSubCommand;
-import com.gcunha.pagminecash.commands.subcommands.RemoveSubCommand;
-import com.gcunha.pagminecash.commands.subcommands.SetSubCommand;
-import com.gcunha.pagminecash.commands.subcommands.TopSubCommand;
+import com.gcunha.pagminecash.commands.subcommands.*;
 import com.gcunha.pagminecash.data.CashData;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -35,6 +32,7 @@ public class CommandCash implements CommandExecutor {
         addSubCommand(new SetSubCommand());
         addSubCommand(new AddSubCommand());
         addSubCommand(new RemoveSubCommand());
+        addSubCommand(new SendSubCommand());
 
         setupCommand();
     }
