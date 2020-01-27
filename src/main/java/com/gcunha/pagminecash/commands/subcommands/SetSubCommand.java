@@ -3,7 +3,6 @@ package com.gcunha.pagminecash.commands.subcommands;
 import com.gcunha.pagminecash.PagMineCash;
 import com.gcunha.pagminecash.bank.Bank;
 import com.gcunha.pagminecash.commands.SubCommand;
-import com.gcunha.pagminecash.data.runnables.TopUpdateBukkitRunnable;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
@@ -21,7 +20,7 @@ public class SetSubCommand extends SubCommand {
     public boolean execute(CommandSender commandSender, String[] args) throws Exception {
         //TODO: DEIXAR AS MENSAGENS CONFIGURAVEIS
         String playerName = args[1];
-        Float quantity;
+        int quantity;
 
         OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(playerName);
 
@@ -33,10 +32,11 @@ public class SetSubCommand extends SubCommand {
 
         //Verifica se o argumento eh de tipo float
         try {
-            quantity = Float.parseFloat(args[2]);
+            quantity = Integer.parseInt(args[2]);
         } catch (NumberFormatException e) {
             throw new Exception();
         }
+
 
         Bank playerBank = plugin.getBankManager().getBank(offlinePlayer.getUniqueId());
         playerBank.setCash(quantity);

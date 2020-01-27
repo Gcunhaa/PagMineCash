@@ -2,14 +2,8 @@ package com.gcunha.pagminecash.data;
 
 import com.gcunha.pagminecash.PagMineCash;
 import com.gcunha.pagminecash.bank.Bank;
-import com.gcunha.pagminecash.data.runnables.Callback;
-import com.gcunha.pagminecash.data.runnables.QuerryCashBankRunnable;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.scheduler.BukkitRunnable;
-import org.bukkit.scheduler.BukkitTask;
 
 
 import java.sql.Connection;
@@ -17,8 +11,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.SortedMap;
 import java.util.UUID;
 
 public class CashDataMySql implements CashData {
@@ -57,7 +49,7 @@ public class CashDataMySql implements CashData {
             resultSet = preparedStatement.executeQuery();
 
             if(resultSet != null && resultSet.next()){
-                result = new Bank(uuid,resultSet.getFloat("Cash"));
+                result = new Bank(uuid,resultSet.getInt("Cash"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -69,7 +61,6 @@ public class CashDataMySql implements CashData {
     }
 
 
-    //TODO: FAZER TOPBANK
     @Override
     public ArrayList<Bank> getTopBanks() {
         Connection connection = null;
@@ -88,7 +79,7 @@ public class CashDataMySql implements CashData {
             resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()){
-                Bank bank = new Bank(UUID.fromString(resultSet.getString("Uuid")),resultSet.getFloat("Cash"));
+                Bank bank = new Bank(UUID.fromString(resultSet.getString("Uuid")),resultSet.getInt("Cash"));
                 result.add(bank);
             }
 
@@ -115,7 +106,7 @@ public class CashDataMySql implements CashData {
             connection = dataSource.getConnection();
             preparedStatement = connection.prepareStatement(query);
 
-            preparedStatement.setFloat(1,bank.getCash());
+            preparedStatement.setInt(1,bank.getCash());
             preparedStatement.setString(2,bank.getOwnerUuid().toString());
 
             preparedStatement.execute();
@@ -181,7 +172,7 @@ public class CashDataMySql implements CashData {
             ps = conn.prepareStatement(
                     "CREATE TABLE IF NOT EXISTS `pagminecash` " +
                             "( `Uuid` VARCHAR(36) NOT NULL ," +
-                            " `Cash` FLOAT NOT NULL DEFAULT '0.00' ," +
+                            " `Cash` INTEGER NOT NULL DEFAULT '0' ," +
                             " PRIMARY KEY (`Uuid`)" +
                             ")"
             );

@@ -28,7 +28,7 @@ public class SendSubCommand extends SubCommand {
 
         //TODO: DEIXAR AS MENSAGENS CONFIGURAVEIS
         String playerName = args[1];
-        Float quantity;
+        int quantity;
 
         Player player = (Player) commandSender;
         OfflinePlayer targetPlayer = Bukkit.getOfflinePlayer(playerName);
@@ -41,7 +41,7 @@ public class SendSubCommand extends SubCommand {
 
         //Verifica se o argumento eh de tipo float
         try {
-            quantity = Float.parseFloat(args[2]);
+            quantity = Integer.parseInt(args[2]);
         } catch (NumberFormatException e) {
             throw new Exception();
         }
@@ -54,7 +54,7 @@ public class SendSubCommand extends SubCommand {
         if(playerBank.getCash() > quantity){
             playerBank.removeCash(quantity);
             targetBank.addCash(quantity);
-            commandSender.sendMessage("§aVoce enviou %cash% ao jogador: %jogador% : ".replace("%jogador%",targetPlayer.getName()).replace("%cash%",quantity.toString()));
+            commandSender.sendMessage("§aVoce enviou %cash% ao jogador: %jogador% : ".replace("%jogador%",targetPlayer.getName()).replace("%cash%",Integer.toString(quantity)));
         }else{
             commandSender.sendMessage("§cSaldo insuficiente.");
         }

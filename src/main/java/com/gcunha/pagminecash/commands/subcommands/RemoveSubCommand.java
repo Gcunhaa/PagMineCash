@@ -20,7 +20,7 @@ public class RemoveSubCommand extends SubCommand {
     public boolean execute(CommandSender commandSender, String[] args) throws Exception {
         //TODO: DEIXAR AS MENSAGENS CONFIGURAVEIS
         String playerName = args[1];
-        Float quantity;
+        int quantity;
 
         OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(playerName);
 
@@ -32,7 +32,7 @@ public class RemoveSubCommand extends SubCommand {
 
         //Verifica se o argumento eh de tipo float
         try {
-            quantity = Float.parseFloat(args[2]);
+            quantity = Integer.parseInt(args[2]);
         } catch (NumberFormatException e) {
             throw new Exception();
         }

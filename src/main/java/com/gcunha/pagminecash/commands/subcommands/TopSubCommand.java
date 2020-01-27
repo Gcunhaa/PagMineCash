@@ -1,6 +1,5 @@
 package com.gcunha.pagminecash.commands.subcommands;
 
-import com.gcunha.pagminecash.PagMineCash;
 import com.gcunha.pagminecash.commands.SubCommand;
 import com.gcunha.pagminecash.data.runnables.TopUpdateBukkitRunnable;
 import org.bukkit.OfflinePlayer;

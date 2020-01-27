@@ -8,30 +8,30 @@ import java.util.UUID;
 public class Bank {
 
     private UUID ownerUuid;
-    private Float cash;
+    private int cash;
 
-    public Bank(UUID ownerUuid, Float cash) {
+    public Bank(UUID ownerUuid, int cash) {
         this.ownerUuid = ownerUuid;
         this.cash = cash;
     }
 
     public Bank(UUID ownerUuid) {
         this.ownerUuid = ownerUuid;
-        this.cash = (float) 0.0;
+        this.cash = 0;
     }
 
     public UUID getOwnerUuid() {
         return ownerUuid;
     }
 
-    public Float getCash() {
+    public int getCash() {
         return cash;
     }
 
-    public void setCash(Float quantity){
+    public void setCash(int quantity){
         //Funcao que atualizar o valor de cash no banco de dados
         if(quantity < 0) {
-            quantity = (float) 0;
+            quantity = 0;
         }
 
         this.cash = quantity;
@@ -45,15 +45,13 @@ public class Bank {
         }.runTaskAsynchronously(PagMineCash.getInstance());
     }
 
-    public void addCash(Float quantity){
+    public void addCash(int quantity){
         //Funcao que adiciona cash ao jogador
         setCash(this.cash + quantity);
     }
 
-    public void removeCash(Float quantity){
+    public void removeCash(int quantity){
         //Funcao que remove cash do jogador
-
-        Float cash = this.cash;
 
         setCash(this.cash - quantity);
     }
