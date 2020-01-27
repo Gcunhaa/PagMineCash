@@ -4,9 +4,7 @@ import com.gcunha.pagminecash.PagMineCash;
 import com.gcunha.pagminecash.bank.Bank;
 import com.gcunha.pagminecash.bank.BankManager;
 import com.gcunha.pagminecash.commands.subcommands.*;
-import com.gcunha.pagminecash.data.CashData;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -33,6 +31,11 @@ public class CommandCash implements CommandExecutor {
         addSubCommand(new AddSubCommand());
         addSubCommand(new RemoveSubCommand());
         addSubCommand(new SendSubCommand());
+        addSubCommand(new ActivateKeySubCommand());
+        addSubCommand(new CreateKeySubCommand());
+        addSubCommand(new SeeKeysSubCommand());
+        addSubCommand(new DeleteKeySubCommand());
+        addSubCommand(new EditKeySubCommand());
 
         setupCommand();
     }

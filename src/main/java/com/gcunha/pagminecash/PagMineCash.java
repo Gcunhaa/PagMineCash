@@ -4,6 +4,7 @@ import com.gcunha.pagminecash.bank.BankManager;
 import com.gcunha.pagminecash.commands.CommandCash;
 import com.gcunha.pagminecash.data.CashData;
 import com.gcunha.pagminecash.data.CashDataMySql;
+import com.gcunha.pagminecash.key.KeyManager;
 import com.gcunha.pagminecash.listener.PlayerExitListener;
 import com.gcunha.pagminecash.listener.PlayerJoinListener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -16,6 +17,7 @@ public class PagMineCash extends JavaPlugin {
     private BankManager bankManager;
     private CommandCash commandCash;
     private CashData dataManager;
+    private KeyManager keyManager;
 
     @Override
     public void onEnable() {
@@ -24,6 +26,7 @@ public class PagMineCash extends JavaPlugin {
         setupData();
 
         this.bankManager = new BankManager();
+        this.keyManager = new KeyManager();
 
         this.commandCash = new CommandCash();
         setupListeners();
@@ -44,6 +47,10 @@ public class PagMineCash extends JavaPlugin {
 
     public CashData getDataManager() {
         return dataManager;
+    }
+
+    public KeyManager getKeyManager() {
+        return keyManager;
     }
 
     private void setupData(){

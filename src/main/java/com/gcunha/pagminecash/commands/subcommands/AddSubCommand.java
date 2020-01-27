@@ -30,7 +30,7 @@ public class AddSubCommand extends SubCommand {
             return true;
         }
 
-        //Verifica se o argumento eh de tipo float
+        //Verifica se o argumento eh de tipo int
         try {
             quantity = Integer.parseInt(args[2]);
         } catch (NumberFormatException e) {

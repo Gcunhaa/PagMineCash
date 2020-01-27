@@ -7,19 +7,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72826a8f-64a8-42a6-bfc9-d864c025a234" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/ActivateKeySubCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/CreateKeySubCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/DeleteKeySubCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/EditKeySubCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/SeeKeysSubCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/key/KeyManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/utils/RandomString.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/PagMineCash.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/PagMineCash.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/bank/Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/bank/Bank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/commands/CommandCash$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/commands/CommandCash$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/commands/CommandCash$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/commands/CommandCash$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/commands/CommandCash.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/commands/CommandCash.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/data/CashDataMySql.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/data/CashDataMySql.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/bank/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/bank/Bank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/data/runnables/Callback.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/data/runnables/ExecuteBukkitRunnable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PagMineCash/com/gcunha/pagminecash/data/runnables/QuerryCashBankRunnable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/PagMineCash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/PagMineCash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/CommandCash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/CommandCash.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/AddSubCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/AddSubCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/RemoveSubCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/RemoveSubCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/SendSubCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/SendSubCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/SetSubCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/SetSubCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/TopSubCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/commands/subcommands/TopSubCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/data/CashDataMySql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/data/CashDataMySql.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/data/runnables/Callback.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/data/runnables/ExecuteBukkitRunnable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/data/runnables/QuerryCashBankRunnable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/key/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gcunha/pagminecash/key/Key.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +62,7 @@
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.gcunha.pagminecash.commands.subcommands" />
+      <recent name="com.gcunha.pagminecash.commands" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -113,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579803408077</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Tipo cash refatorado para Inteiro.">
+      <created>1580146811266</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1580146811266</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -122,13 +139,18 @@
     <MESSAGE value="Comandos adicionar,remover,setar e top adicionados" />
     <MESSAGE value="Comando enviar adicionado." />
     <MESSAGE value="Agora o bando de dados atualiza toda vez que uma transacao ocorre" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agora o bando de dados atualiza toda vez que uma transacao ocorre" />
+    <MESSAGE value="Tipo cash refatorado para Inteiro." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tipo cash refatorado para Inteiro." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="491" y="82" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" timestamp="1579802922873">
+    <state x="278" y="24" width="800" height="672" key="#Auto_Import" timestamp="1580149848620">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="491" y="82" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1579802922873" />
+    <state x="278" y="24" width="800" height="672" key="#Auto_Import/0.0.1366.728@0.0.1366.728" timestamp="1580149848620" />
+    <state x="491" y="82" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" timestamp="1580149665155">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="491" y="82" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1580149665155" />
     <state x="416" y="113" width="524" height="495" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1580146176280">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -145,10 +167,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="166" y="0" width="1024" height="723" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1579547186985" />
-    <state x="278" y="99" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1579803414994">
+    <state x="278" y="99" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1580146817110">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="278" y="99" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1579803414994" />
+    <state x="278" y="99" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1580146817110" />
     <state x="366" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1580143669430">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

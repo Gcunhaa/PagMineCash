@@ -184,6 +184,24 @@ public class CashDataMySql implements CashData {
         } finally {
             close(conn, ps, null);
         }
+
+        try {
+            conn = getDataSource().getConnection();
+            ps = conn.prepareStatement(
+                    "CREATE TABLE IF NOT EXISTS `pagminecash_keys` " +
+                            "( `Key` VARCHAR(36) NOT NULL ," +
+                            " `Cash` INTEGER NOT NULL DEFAULT '0' ," +
+                            " PRIMARY KEY (`Key`)" +
+                            ")"
+            );
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+            //Perceba que eh importante finalizar a query apos realiza-la.
+        } finally {
+            close(conn, ps, null);
+        }
     }
 
     private void setupConfig(){
